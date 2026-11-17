@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event - CampusConnect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f9;
+            margin: 0;
+        }
+
+        header {
+            background-color: #00549e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #00549e;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CampusConnect</h1>
+    </header>
+
+    <div class="container">
+        <h2>Add a Campus Event</h2>
+
+        <form method="POST" action="/add-event">
+            <label>Event Title</label>
+            <input type="text" name="title" required>
+
+            <label>Event Date and Time</label>
+            <input type="datetime-local" name="date" required>
+
+            <label>Location</label>
+            <input type="text" name="location">
+
+            <label>Description</label>
+            <textarea name="description" rows="4"></textarea>
+
+            <button type="submit">Add Event</button>
+        </form>
+
+        <p><a href="/">Back to Home</a></p>
+    </div>
+</body>
+</html>

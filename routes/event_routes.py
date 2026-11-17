@@ -17,7 +17,8 @@ def events():
 
     # Fetch external events 
     # Update the extenal_events variable with the data you want to display
-    external_events = []
+    cursor.execute("SELECT title, date, location, description FROM external_events")
+    external_events = cursor.fetchall()
 
 
 

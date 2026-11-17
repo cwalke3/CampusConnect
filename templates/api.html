@@ -1,20 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - CampusConnect</title>
+    <title>CampusConnect API Data</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
-        <h1>Student Dashboard</h1>
+        <h1>CampusConnect API Data</h1>
     </header>
+
     <main>
-        <p>Welcome back! Here’s what’s happening:</p>
-        <ul>
-            <li>More features coming soon...</li>
-            <li><a href="/events">View Events</a></li>
-        </ul>
+        <h2>Public API Records</h2>
+        <p>Data retrieved from JSONPlaceholder API.</p>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+
+            {% for item in api_data %}
+            <tr>
+                <td>{{ item["id"] }}</td>
+                <td>{{ item["title"] }}</td>
+                <td>{{ item["description"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p><a href="/">Back to Home</a></p>
     </main>
 </body>
 </html>

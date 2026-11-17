@@ -24,6 +24,23 @@ c.execute('''CREATE TABLE IF NOT EXISTS events (
     date TEXT
 )''')
 
+# Create a table to store real college events
+c.execute("""CREATE TABLE IF NOT EXISTS external_events (
+    id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    date TEXT,
+    location TEXT,
+    description TEXT
+)""")
+
+# Create a table to store information from a public API
+c.execute("""CREATE TABLE IF NOT EXISTS api_data (
+    id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    description TEXT,
+    category TEXT
+)""")
+
 # Create Users Seed Data
 c.execute("INSERT INTO users (name, preferences) VALUES (?, ?)", ("Alice", "Aly"))
 c.execute("INSERT INTO users (name, preferences) VALUES (?, ?)", ("Bob", "art, Bobby"))
